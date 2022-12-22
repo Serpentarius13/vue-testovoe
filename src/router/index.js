@@ -1,3 +1,4 @@
+import TheCreateNewsSection from "@/routes/TheCreateNewsSection.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -9,7 +10,7 @@ const routes = [
   {
     path: "/create",
     name: "Create news",
-    component: () => import("./../routes/TheCreateNewsSection.vue"),
+    component: TheCreateNewsSection,
   },
 ];
 

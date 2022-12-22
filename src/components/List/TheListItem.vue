@@ -9,8 +9,19 @@
         id автора: {{ userId }}
       </p>
     </div>
-    <button @click="onDelete" class="news-section__list-item-deleteBtn">
+    <button
+      v-if="!isDeleting"
+      @click="onDelete"
+      class="news-section__list-item-deleteBtn"
+    >
       Удалить
+    </button>
+    <button
+      v-else
+      @click="confirmDelete"
+      class="news-section__list-item-deleteBtnConfirm"
+    >
+      Подтвердить удаление
     </button>
   </div>
 
@@ -24,10 +35,23 @@ const { item } = defineProps(["item"]);
 const { userId, title, body, id } = item;
 const isShowingText = ref(false);
 
-console.log(isShowingText);
+const isDeleting = ref(false);
 
 const onDelete = () => {
-  alert("Deleted");
+  isDeleting.value = true;
+};
+
+const confirmDelete = async () => {
+  try {
+    await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+      method: "DELETE",
+    });
+    alert("Post is deleted");
+    location.reload();
+  } catch (err) {
+    console.log(err);
+    alert("The post wasnt deleted");
+  }
 };
 
 const onShow = () => {
@@ -74,6 +98,19 @@ const onShow = () => {
       cursor: pointer;
       &:hover {
         color: rgb(148, 0, 0);
+      }
+    }
+
+    &-deleteBtnConfirm {
+      padding: 16px 12px;
+      border: red 3px solid;
+      background-color: white;
+      color: red;
+      cursor: pointer;
+
+      &:active {
+        color: white;
+        background-color: red;
       }
     }
   }

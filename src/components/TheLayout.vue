@@ -15,6 +15,7 @@ import TheSidebarButtons from "./SidebarButtons/TheSidebarButtons.vue";
   width: 100vw;
   height: 100vh;
   display: flex;
+  overflow: hidden;
 
   &__sidebar {
     min-width: 25%;
@@ -28,8 +29,7 @@ import TheSidebarButtons from "./SidebarButtons/TheSidebarButtons.vue";
 
   &__news-section {
     flex: 1;
-    height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 20px 36px;
   }
 }

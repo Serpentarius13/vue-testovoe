@@ -1,18 +1,23 @@
 <template>
-  <div :style="{ display: 'flex', alignItems: 'center' }">
+  <div>
     <input
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       :placeholder="label"
-      :type="type"
       :class="type + '-input'"
+      v-if="type === 'text'"
     />
-    <label
-      :style="{ marginLeft: '12px', fontSize: '14px' }"
-      v-if="type === 'checkbox'"
-    >
-      {{ label }}
-    </label>
+    <div v-else>
+      <p :style="{ textAlign: 'end', paddingBottom: '2px' }">
+        Total symbols: {{ modelValue.length }}
+      </p>
+      <textarea
+        :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)"
+        :placeholder="label"
+        :class="type + '-input'"
+      />
+    </div>
   </div>
 </template>
 

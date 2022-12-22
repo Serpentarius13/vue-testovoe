@@ -1,6 +1,6 @@
 <template>
   <div class="news-section">
-    <h1 class="heading" >News section</h1>
+    <h1 class="heading">News section</h1>
 
     <ul v-if="data" class="news-section__list">
       <the-list-component :data="data" />
@@ -19,10 +19,7 @@ onMounted(async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   const json = await response.json();
   data.value = json;
-  console.log(data);
 });
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
