@@ -17,11 +17,14 @@ import TheSidebarButtons from "./SidebarButtons/TheSidebarButtons.vue";
   display: flex;
   overflow: hidden;
 
+
   &__sidebar {
     min-width: 25%;
     height: 100%;
     background: #eee;
-    position: fixed;
+
+    // position: fixed; //! Может, лучше по клику это делать?
+  
 
     box-shadow: 3px 0 12px gray;
     z-index: 12;
