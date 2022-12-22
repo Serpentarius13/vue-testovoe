@@ -27,6 +27,8 @@ import TheSidebarButtons from "./SidebarButtons/TheSidebarButtons.vue";
 
   &__news-section {
     flex: 1;
+    height: 100%;
+    overflow: scroll;
   }
 }
 </style>
