@@ -2,7 +2,7 @@
 
 ## Для запуска выполните команды:
 
-- git clone 'ссылка на этот репозиторий'
+- git clone https://github.com/Serpentarius13/vue-testovoe
 - yarn
 - yarn serve
 
