@@ -21,6 +21,7 @@ import TheSidebarButtons from "./SidebarButtons/TheSidebarButtons.vue";
     min-width: 25%;
     height: 100%;
     background: #eee;
+    position: fixed;
 
     box-shadow: 3px 0 12px gray;
     z-index: 12;
