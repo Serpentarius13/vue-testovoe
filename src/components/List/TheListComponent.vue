@@ -9,7 +9,6 @@
     }"
   >
     <the-list-item :item="post" />
-
   </li>
 </template>
 
@@ -20,6 +19,4 @@ import { defineProps } from "vue";
 const { data } = defineProps(["data"]);
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

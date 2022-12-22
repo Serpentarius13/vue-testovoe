@@ -56,7 +56,6 @@ const validateLength = (arr) => {
   return check;
 };
 
-watch(formState, () => console.log(formState.gender));
 
 //** Utter hell. */
 const submit = () => {
