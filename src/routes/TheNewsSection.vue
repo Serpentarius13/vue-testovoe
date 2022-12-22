@@ -1,6 +1,6 @@
 <template>
   <div class="news-section">
-    <h1>News section</h1>
+    <h1 class="heading" >News section</h1>
 
     <ul v-if="data" class="news-section__list">
       <the-list-component :data="data" />
@@ -24,7 +24,5 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
-.news-section {
-  padding: 12px 24px;
-}
+
 </style>

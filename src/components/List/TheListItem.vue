@@ -2,9 +2,9 @@
   <div class="news-section__list-item">
     <p class="news-section__list-item-id">{{ id }}</p>
     <div class="news-section__list-item-description">
-      <p @click="onShow" class="news-section__list-item-description-name">
+      <button @click="onShow" class="news-section__list-item-description-name">
         {{ title }}
-      </p>
+      </button>
       <p class="news-section__list-item-description-author">
         id автора: {{ userId }}
       </p>
@@ -44,10 +44,10 @@ const onShow = () => {
     gap: 0.3rem;
 
     &-id {
-      width: 13%;
       font-size: 72px;
       color: #999;
-      margin-left: 48px;
+      width: 10%;
+      padding-left: 12px;
     }
     &-description {
       flex: 1;
@@ -57,6 +57,7 @@ const onShow = () => {
         font-weight: bold;
         color: black;
         cursor: pointer;
+        border: none;
 
         &:hover {
           color: gray;

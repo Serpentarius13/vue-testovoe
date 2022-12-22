@@ -23,12 +23,14 @@ import TheSidebarButtons from "./SidebarButtons/TheSidebarButtons.vue";
 
     box-shadow: 3px 0 12px gray;
     z-index: 12;
+    padding: 12px;
   }
 
   &__news-section {
     flex: 1;
     height: 100%;
     overflow: scroll;
+    padding: 20px 36px;
   }
 }
 </style>

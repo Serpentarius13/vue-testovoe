@@ -1,13 +1,15 @@
 <template>
-  <div class="z">Create form123</div>
+  <div>
+    <base-input v-model="text" />
+    {{ text }}
+  </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import BaseInput from "./../components/Form/BaseInput.vue";
+import { ref } from "vue";
+// eslint-disable-next-line no-unused-vars
+const text = ref("");
 </script>
 
-<style lang="scss" scoped>
-.z {
-  z-index: 1231321;
-}
-</style>
+<style lang="scss" scoped></style>

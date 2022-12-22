@@ -16,3 +16,7 @@ a:active {
   text-decoration: none;
   color: #333 !important;
 }
+
+.heading {
+    padding-bottom: 36px;
+}
