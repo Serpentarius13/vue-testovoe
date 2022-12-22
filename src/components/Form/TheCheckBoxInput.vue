@@ -1,13 +1,15 @@
 <template>
-  <div class="checkbox-box">
+  <label class="container">
+    {{ label }}
     <input
       @change="$emit('update:modelValue', $event.target.checked)"
       :value="modelValue"
+      :checked="modelValue"
       type="checkbox"
       id="terms"
     />
-    <label>  {{ label }} </label>
-  </div>
+    <span class="mark" />
+  </label>
 </template>
 
 <script>
@@ -25,10 +27,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.checkbox-box {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-</style>
+<style lang="scss" scoped></style>

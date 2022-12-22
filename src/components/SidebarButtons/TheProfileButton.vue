@@ -2,8 +2,8 @@
   <div class="sidebar__profile">
     <img class="sidebar__profile-image" src="/profilePic.png" />
     <div class="sidebar__profile-text-section">
-      <p :style="{ fontSize: '18px', color: '#111' }">Nameee</p>
-      <p :style="{ fontSize: '14px', color: '#aaa' }">emailllll@mail.ru</p>
+      <p :style="{ fontSize: '18px', color: '#111' }">Patrick Bateman</p>
+      <p :style="{ fontSize: '14px', color: '#aaa' }">serialkiller13@mail.ru</p>
     </div>
   </div>
 </template>

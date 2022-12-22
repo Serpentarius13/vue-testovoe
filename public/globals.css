@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 0.4px;
@@ -21,31 +25,3 @@ a:active {
   padding-bottom: 36px;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-  display: none;
-}
-
-label {
-  padding-left: 20px;
-}
-
-label::before {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-left: -10px;
-  margin-right: 10px;
-  border: 2px solid gray;
-  vertical-align: middle;
-  transition: all 0.5s;
-  position: relative;
-}
-
-input[type="checkbox"]:checked + label::before,
-input[type="radio"]:checked + label::before {
-  border: 2px solid blue;
-  background-color: blue;
-  box-shadow: inset 0px 2px white;
-}

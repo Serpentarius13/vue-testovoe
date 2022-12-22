@@ -1,7 +1,8 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import "./../public/globals.css";
-import router from './router'
+import "./../public/checkbox.scss";
+import router from "./router";
 
 const app = createApp(App).use(router);
 

@@ -1,26 +1,32 @@
 //** DONT LOOK AT THIS! */ //! I WARN YOU.
 
 <template>
-  <div class="radio-box">
-    <div>
-      <input
-        :checked="!gender"
-        type="radio"
-        :value="gender"
-        @click="onChange"
-        id="female"
-      />
-      <label for="female"> Female </label>
-    </div>
-    <div>
-      <input
-        :checked="gender"
-        type="radio"
-        :value="!gender"
-        @click="onChange"
-        id="male"
-      />
-      <label for="male"> Male </label>
+  <div>
+    <b>Ваш пол</b>
+
+    <div class="radio-box">
+      <label for="female" class="container">
+        <input
+          :checked="isGenderFemale"
+          type="radio"
+          :value="isGenderFemale"
+          @click="onChange"
+          id="female"
+        />
+        <span class="mark" />
+        Женский
+      </label>
+      <label for="male" class="container">
+        <input
+          :checked="!isGenderFemale"
+          type="radio"
+          :value="!isGenderFemale"
+          @click="onChange"
+          id="male"
+        />
+        <span class="mark" />
+        Мужской
+      </label>
     </div>
   </div>
 </template>
@@ -29,12 +35,12 @@
 import { ref, defineEmits } from "vue";
 
 const emit = defineEmits(["gender"]);
-const gender = ref(false);
+const isGenderFemale = ref(false);
 
 const onChange = () => {
-  gender.value = !gender.value;
+  isGenderFemale.value = !isGenderFemale.value;
 
-  const emittedValue = gender.value ? "female" : "male";
+  const emittedValue = isGenderFemale.value ? "female" : "male";
   emit("gender", emittedValue);
 };
 </script>
@@ -42,7 +48,8 @@ const onChange = () => {
 <style lang="scss" scoped>
 .radio-box {
   display: flex;
-  gap: 60px;
+  gap: 12px;
   align-items: center;
+  padding-top: 4px;
 }
 </style>

@@ -8,8 +8,8 @@
       v-if="type === 'text'"
     />
     <div v-else>
-      <p :style="{ textAlign: 'end', paddingBottom: '2px' }">
-        Total symbols: {{ modelValue.length }}
+      <p class="totalSymbols">
+        Количество символов: {{ modelValue.length }}
       </p>
       <textarea
         :value="modelValue"
@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 @mixin field {
   border: 1px solid gray;
-  width: 100%;
+  width: 95%;
   padding: 8px 16px;
 }
 .text-input {
@@ -56,5 +56,11 @@ export default {
   @include field;
 
   height: 240px;
+}
+
+.totalSymbols {
+  font-size: 12px;
+  color: #333;
+  text-align: end;
 }
 </style>

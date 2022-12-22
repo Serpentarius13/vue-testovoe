@@ -4,18 +4,25 @@
   <h1 class="heading">Create post</h1>
   <div class="forms">
     <form @submit.prevent="submit" class="form">
-      <base-input v-model="formState.name" label="Name" type="text" />
+      <base-input v-model="formState.name" label="Ваше имя" type="text" />
       <base-input v-model="formState.email" label="Email" type="text" />
       <the-radio-box-input @gender="(value) => (formState.gender = value)" />
-      <base-input v-model="formState.message" label="Message" type="textarea" />
-      <the-check-box-input v-model="formState.agree" label="Agree upon" />
-      <button class="form__submit-btn" type="submit">Submit</button>
+      <base-input
+        v-model="formState.message"
+        label="Сообщение"
+        type="textarea"
+      />
+      <the-check-box-input
+        v-model="formState.agree"
+        label="Согласен на обработку персональных данных"
+      />
+      <button class="form__submit-btn" type="submit">Отправить</button>
     </form>
 
     <ul class="newPost" v-show="newPost">
       <li v-for="(value, key) in newPost" :key="key" class="newPost__item">
         <span> {{ key }}: </span>
-        {{ value }}
+        <b> {{ value }} </b>
       </li>
     </ul>
   </div>
@@ -25,7 +32,7 @@
 import BaseInput from "../components/Form/BaseTextInput.vue";
 import TheCheckBoxInput from "./../components/Form/TheCheckBoxInput.vue";
 import TheRadioBoxInput from "./../components/Form/TheRadioBoxInput.vue";
-import { reactive, ref } from "vue";
+import { reactive, ref, watch } from "vue";
 
 const initialState = {
   name: "",
@@ -49,6 +56,8 @@ const validateLength = (arr) => {
   return check;
 };
 
+watch(formState, () => console.log(formState.gender));
+
 //** Utter hell. */
 const submit = () => {
   if (!formState.agree) {
@@ -57,7 +66,6 @@ const submit = () => {
   }
 
   const keys = Object.values(formState).slice(0, 3);
-
 
   if (validateLength(keys)) {
     alert("Write some more");
@@ -91,8 +99,25 @@ const submit = () => {
     gap: 28px;
 
     &__submit-btn {
-      width: 10%;
-      padding: 12px;
+      $activeColor: rgb(0, 119, 255);
+      padding: 12px 72px;
+      margin-left: auto;
+      max-width: 50%;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      color: $activeColor;
+      outline: 2px $activeColor solid;
+      transition: 0.1s all ease-in;
+      &:active {
+        background-color: $activeColor;
+        color: white;
+      }
+
+      &:hover:not(:active) {
+        background-color: #ddd;
+      }
     }
   }
 
@@ -109,8 +134,7 @@ const submit = () => {
 
     font-size: 20px;
 
-    border: 2px solid gray;
-
+    box-shadow: 0 0 4px rgb(76, 159, 255);
     &__item {
       width: 100%;
       word-break: break-all;
