@@ -1,9 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import "./../public/globals.css";
-import router from "./../utils/router.js";
+import router from './router'
 
-const app = createApp(App);
+const app = createApp(App).use(router);
 
 app.use(router);
 

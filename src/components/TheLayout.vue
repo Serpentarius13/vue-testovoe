@@ -2,10 +2,7 @@
   <div class="layout">
     <div class="layout__sidebar"><the-sidebar-buttons /></div>
 
-    <div class="layout__news-section">
-
-        <router-view/>
-    </div>
+    <div class="layout__news-section"><router-view /></div>
   </div>
 </template>
 
@@ -20,7 +17,7 @@ import TheSidebarButtons from "./SidebarButtons/TheSidebarButtons.vue";
   display: flex;
 
   &__sidebar {
-    min-width: 25rem;
+    min-width: 25%;
     height: 100%;
     background: #eee;
 
@@ -30,7 +27,6 @@ import TheSidebarButtons from "./SidebarButtons/TheSidebarButtons.vue";
 
   &__news-section {
     flex: 1;
-    background-color: red;
   }
 }
 </style>
